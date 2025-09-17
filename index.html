@@ -1,38 +1,107 @@
+<!--
+  This DOCTYPE tag explains to the browser that this
+  is an HTML document.
+-->
 <!DOCTYPE html>
+<!--
+  This html tag starts your website.
+  It also states the default language the page is
+  written in: English.
+-->
 <html lang="en">
+  <!--
+    The head tag handles everything that the website 
+    needs to display properly, but NEVER holds the
+    content of the website.
+  -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>First Webpage</title>
+    <!-- 
+      The title tag shows what text 
+      displays in the tab at the top
+      of the web browser.
+    -->
+    <title>First Web Project</title>
     <script>
       function search() {
         let request = document.getElementById('request');
         let web = document.getElementById('web');
         web.src = request.value;
       }
+      function ran(min, max) {
+        return (Math.ceil(Math.random() * (max - min))) + min;
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+        let call = document.getElementById('call-random');
+        call.href = 'tel:' + ran(1000000000, 9999999999);
+      });
     </script>
   </head>
+  <!-- The body holds all the content that displays on the webpage. -->
   <body>
+    <!-- 
+      This is a paragraph tag. This is used to display
+      full sentences of information on a web page.
+    -->
     <p>Hello, my name is Xander. This is my first website.</p>
-    <!--H1 is the main heading, usually serving as the website's title.-->
+    <!-- 
+      h1 is the largest type of heading and is the main 
+      heading for a website.
+
+      It is an example of a block element because it 
+      spans the whole width of the website by default.
+    -->
     <h1>Heading 1</h1>
-    <!--H2 is the first subheading that you would use in a website.-->
+    <!-- 
+      h2 is the second level of heading and is what is used
+      for the first subheading of a web page.
+
+      It creates a title for a subsection of a web page.
+    -->
     <h2>Heading 2</h2>
-    <!--H3 would be the subheading of the previous subheading.-->
+    <!-- h3 is the second level of subheading in a web page. -->
     <h3>Heading 3</h3>
-    <!--And so on...-->
+    <!-- h4 is the third level of subheading. -->
     <h4>Heading 4</h4>
     <h5>Heading 5</h5>
     <h6>Heading 6</h6>
+    <!-- 
+      br is short for break or break line. It allows developers 
+      to put extra lines of whitespace between their elements.
+    -->
+    <br />
+    <!-- 
+      a is short for anchor. It allows us to create links
+      between web pages in our own website, links to external
+      websites, links to email addresses, or links to telephone
+      numbers.
+      
+      Necessary attributes include:
+        href, which is the hyperlink reference or link that you
+        are trying to create.
+      Useful attributes include:
+        target, which lets you set where in the web browser the
+        link should be opened. E.g., _blank opens the link in a
+        new tab.
+    -->
+    <a href="./index.html">Hyperlink (directs here)</a><br />
+    <a href="./images-and-frames.html">Images and IFrames section</a><br />
+    <a href="./lists-and-tables.html">Lists and Tables section</a><br />
+    <br />
+    <a href="https://google.com/" target="_blank">New Google Tab</a><br />
+    <!-- This will open the default email client on the device. -->
+    <a href="mailto:xthomson@smail.pembinatrails.ca">E-mail me</a><br />
+    <!-- 
+      This will open the default telephone client on the device. 
+    -->
+    <a id="call-random">Call a random person (refresh to reset)</a><br />
     <p><b>Bold text</b></p><br />
     <p><i>Italic text</i></p><br />
     <p><u>Underlined text</u></p><br />
     <p><strong>Important text</strong></p><br />
-    <p><del>Deleted text</del></p>
-    <input type="text" id="request" />
-    <button onclick="search();">Search</button>
-    <iframe id="web" src="" title="Webpage" width="720" height="480"></iframe>
+    <p><del>Deleted text</del></p><br />
+    <p>&lt;element option="value"&gt;Inner HTML&lt;/element&gt;</p>
     <hr />
-    <!--Comment-->
   </body>
 </html>
