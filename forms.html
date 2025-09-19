@@ -21,19 +21,41 @@
           program.
   -->
   <form method="get">
-    <!--
-      The input tag creates the actual element that users will
-      type thier information into.
+    <fieldset>
+      <legend>Contant Information</legend>
+      <!--
+        The label tag is used to explain what input is expected
+        from the input that immediately follows or is right before
+        the label.
 
-      Necessary attributes include:
-        type, which states what type of input it is
-          Example: text, tel, password, email, button, checkbox, radio, etc.
-        id, which gives the input an identifying name different from
-        other inputs.
-        name, which gives a variable for how to store this information
-        in the serach bar or on the back-end.
-    -->
-    <label>First name: <input type="text" id="fname" name="fname" required /></label>
+        Important attributes include:
+          for, which links to the ID of the input the label is for.
+      -->
+      <label for="fname">First name:</label><br />
+      <!--
+        The input tag creates the actual element that users will
+        type thier information into.
+
+        Necessary attributes include:
+          type, which states what type of input it is
+            Example: text, tel, password, email, button, checkbox, radio, etc.
+            id, which gives the input an identifying name different from
+            other inputs.
+            name, which gives a variable for how to store this information
+            in the serach bar or on the back-end.
+
+        Important attributes include:
+          required which forces a user to have to enter input in the
+          input.
+      -->
+      <input type="text" id="fname" name="fname" placeholder="John" required /><br />
+      <label for="lname">Last name:</label><br />
+      <input type="text" id="lname" name="lname" placeholder="Doe" required /><br />
+      <label for="phone">Phone number:</label><br />
+      <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" /><br />
+      <label for="email">E-mail address:</label><br />
+      <input type="email" id="email" name="email" placeholder="name@sub.domain.ext" /><br />
+    </fieldset>
   </form>
 </body>
 </html>
