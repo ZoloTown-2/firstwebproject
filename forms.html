@@ -20,9 +20,19 @@
           post, which handles all input by seding it to a back-end
           program.
   -->
-  <form method="get">
-    <fieldset>
-      <legend>Contant Information</legend>
+  <form id="form" method="get">
+    <!--
+      The fieldset tag groups related elements in a form.
+
+      Necessary attributes include:
+        form, which links the fieldset to the ID of the form it
+        belongs to.
+    -->
+    <fieldset id="form">
+      <!--
+        The legend tag gives a title to the group of related inputs.
+      -->
+      <legend>Contact Information</legend>
       <!--
         The label tag is used to explain what input is expected
         from the input that immediately follows or is right before
@@ -48,13 +58,59 @@
           required which forces a user to have to enter input in the
           input.
       -->
-      <input type="text" id="fname" name="fname" placeholder="John" required /><br />
+      <input type="text" id="fname" name="fname" required /><br />
       <label for="lname">Last name:</label><br />
-      <input type="text" id="lname" name="lname" placeholder="Doe" required /><br />
+      <input type="text" id="lname" name="lname" required /><br />
       <label for="phone">Phone number:</label><br />
-      <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" /><br />
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" /><br />
       <label for="email">E-mail address:</label><br />
-      <input type="email" id="email" name="email" placeholder="name@sub.domain.ext" /><br />
+      <input type="email" id="email" name="email" /><br />
+      <label for="loc">Home address:</label>
+      <input type="text" id="loc" name="loc" /><br />
+      <label for="com">Preffered communication method:</label>
+      <!--
+
+      -->
+      <select name="com" id="com">
+        <!--
+          The option tag creates one of the options inside the
+          dropdown menu.
+
+          Necessary attributes include:
+            value, which gives an internal value that will be sent to the back-end or displayed in the search
+        -->
+        <option value="sms">SMS (Text message)</option>
+        <option value="email">E-mail</option>
+        <option value="phone">Voicemail</option>
+        <option value="pmail">Physical mail</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <legend>Your Role</legend>
+      <label for="job">What do you find yourself doing?</label>
+      <select name="job" id="job">
+        <option value="any">Any</option>
+        <option value="analyst">Data analyst</option>
+        <option value="research">Researcher</option>
+        <option value="compiler">Data compiler</option>
+        <option value="process">Processor</option>
+        <option value="maintenance">Maintenance</option>
+        <option value="cashier">Cashier</option>
+        <option value="transit">Shipping Member</option>
+        <option value="advert">Advertiser</option>
+        <option value="bdancer" disabled>Breakdancer (taken)</option>
+        <option value="guard">Security Guard</option>
+        <option value="nguard">Security Nightguard</option>
+        <option value="manager" disabled>Manager (taken)</option>
+      </select>
+      <!--
+        The textarea tag creates a larger textbox to
+        type full sentences in.
+
+        Necessary attributes include:
+        id, which gives the input a unique
+      -->
+      <textarea></textarea>
     </fieldset>
   </form>
 </body>
