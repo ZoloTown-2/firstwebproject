@@ -4,6 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Forms - First Web Project</title>
+  <script>
+    let anynote;
+    let checked = [false, false, false, false, false, false, false, false, false, false, false, false];
+    document.addEventListener('DOMContentLoaded', () => {
+      anynote = document.getElementById('anyjobnote');
+    });
+    function toggleBox(value) {
+      value--;
+      checked[value] = !checked[value];
+      var chk = false;
+      for (var i = 0; i < checked.length; i++) {
+        if (checked[i]) {
+          chk = true;
+          break;
+        }
+      }
+      anynote.hidden = chk;
+    }
+  </script>
 </head>
 <body>
   <h1>HTML Forms</h1>
@@ -62,11 +81,11 @@
       <label for="lname">Last name:</label><br />
       <input type="text" id="lname" name="lname" required /><br />
       <label for="phone">Phone number:</label><br />
-      <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" /><br />
-      <label for="email">E-mail address:</label><br />
-      <input type="email" id="email" name="email" /><br />
-      <label for="loc">Home address:</label>
-      <input type="text" id="loc" name="loc" /><br />
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required /><br />
+      <label for="email">E-mail address (example: username@sub.domain.com):</label><br />
+      <input type="email" id="email" name="email" required /><br />
+      <label for="loc">Home address:</label><br />
+      <input type="text" id="loc" name="loc" required /><br />
       <label for="com">Preffered communication method:</label>
       <!--
 
@@ -88,21 +107,36 @@
     <fieldset>
       <legend>Your Role</legend>
       <label for="job">What do you find yourself doing?</label>
-      <select name="job" id="job">
-        <option value="any">Any</option>
-        <option value="analyst">Data analyst</option>
-        <option value="research">Researcher</option>
-        <option value="compiler">Data compiler</option>
-        <option value="process">Processor</option>
-        <option value="maintenance">Maintenance</option>
-        <option value="cashier">Cashier</option>
-        <option value="transit">Shipping Member</option>
-        <option value="advert">Advertiser</option>
-        <option value="bdancer" disabled>Breakdancer (taken)</option>
-        <option value="guard">Security Guard</option>
-        <option value="nguard">Security Nightguard</option>
-        <option value="manager" disabled>Manager (taken)</option>
-      </select>
+      <div id="job">
+        <input onclick="toggleBox(1);" type="checkbox" id="analyst" name="jobBoxes" value="analyst" />
+        <label for="analyst">Analyst</label><br />
+        <input onclick="toggleBox(2);" type="checkbox" id="research" name="jobBoxes" value="research" />
+        <label for="researcher">Researcher</label><br />
+        <input onclick="toggleBox(3);" type="checkbox" id="compiler" name="jobBoxes" value="compiler" />
+        <label for="compiler">Data compiler</label><br />
+        <input onclick="toggleBox(4);" type="checkbox" id="process" name="jobBoxes" value="process" />
+        <label for="process">Data processor</label><br />
+        <input onclick="toggleBox(5);" type="checkbox" id="maintenance" name="jobBoxes" value="maintenance" />
+        <label for="maintenance">Maintenance</label><br />
+        <input onclick="toggleBox(6);" type="checkbox" id="cashier" name="jobBoxes" value="cashier" />
+        <label for="cashier">Cashier</label><br />
+        <input onclick="toggleBox(7);" type="checkbox" id="transit" name="jobBoxes" value="transit" />
+        <label for="transit">Shipping Member</label><br />
+        <input onclick="toggleBox(8);" type="checkbox" id="advert" name="jobBoxes" value="advert" />
+        <label for="advert">Advertiser</label><br />
+        <input onclick="toggleBox(9);" type="checkbox" id="bdancer" name="jobBoxes" value="bdancer" disabled />
+        <label for="bdancer">Breakdancer (full)</label><br />
+        <input onclick="toggleBox(10);" type="checkbox" id="guard" name="jobBoxes" value="guard" />
+        <label for="guard">Security Guard</label><br />
+        <input onclick="toggleBox(11);" type="checkbox" id="nguard" name="jobBoxes" value="nguard" />
+        <label for="nguard">Security Nightguard</label><br />
+        <input onclick="toggleBox(12);" type="checkbox" id="manager" name="jobBoxes" value="manager" disabled />
+        <label for="manager">Manager (full)</label><br />
+      </div><br />
+      <fieldset id="anyjobnote">
+        <label>In this case, your manager will assign you to a job that they see fit.</label><br />
+        <label>If you wish to request a specfic job, please tick at least one option.</label>
+      </fieldset><br />
       <!--
         The textarea tag creates a larger textbox to
         type full sentences in.
@@ -110,7 +144,9 @@
         Necessary attributes include:
         id, which gives the input a unique
       -->
-      <textarea></textarea>
+      <label for="why">Why should we hire you? What can you provide us with?</label><br />
+      <textarea id="why"></textarea>
+      <!--Add a file selector here-->
     </fieldset>
   </form>
 </body>
