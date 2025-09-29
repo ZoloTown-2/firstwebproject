@@ -13,38 +13,48 @@
     </script>
 </head>
 <body>
-  <h1>HTML Images and IFrames</h1>
-  <!-- 
-    The img tag displays images on a web page.
-    
-    Necessary attributes include:
-      src, which states where the image can be found.
-      alt, which gives descriptive text about the image itself.
-        The goal with alt is to give enough description for a
-        person with vision difficulties, but do not be overly
-        descriptive.
-    Useful attributes include:
-      width: Lets you set the horizontal size of the image.
-      height: Lets you set the vertical size of the image.
-  -->
-  <!-- 
-    Also, img is an example of an inline element because an img
-    only takes up as much space on the web page as it needs to
-    for displaying properly.
-  -->
-  <img src="https://cdn1.edsby.com/mb1/51bf0fcd8a25beba7fd555d85651bd137c2d" alt="[There would be your Edsby profile picture here, but I suppose it didn't load correctly]" width="100"/>
-  <h2>Web Browser (very limited)</h2>
-  <input type="text" id="request" />
-  <button onclick="search();">Search</button>
-  <iframe id="web" src="" title="Webpage" width="720" height="480">IFrame doesn't work</iframe>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Back to ./index.html</a></li>
+        <li><a href="./images-and-frames.html">Here (./images-and-frames.html)</a></li>
+        <li><a href="./lists-and-tables.html">Lists and Tables section</a></li>
+        <li><a href="./forms.html">Apply for a j*b</a></li>
+      </ul>
+    </nav>
+    <h1>HTML Images and IFrames</h1>
+    <h2>Images</h2>
+  </header>
+  <main>
+    <!-- 
+      The img tag displays images on a web page.
+      
+      Necessary attributes include:
+        src, which states where the image can be found.
+        alt, which gives descriptive text about the image itself.
+          The goal with alt is to give enough description for a
+          person with vision difficulties, but do not be overly
+          descriptive.
+      Useful attributes include:
+        width: Lets you set the horizontal size of the image.
+        height: Lets you set the vertical size of the image.
+    -->
+    <!-- 
+      Also, img is an example of an inline element because an img
+      only takes up as much space on the web page as it needs to
+      for displaying properly.
+    -->
+    <img src="https://cdn1.edsby.com/mb1/51bf0fcd8a25beba7fd555d85651bd137c2d" alt="[There would be your Edsby profile picture here, but I suppose it didn't load correctly]" width="100"/>
+    <h2>Web Browser (very limited)</h2>
+    <input type="text" id="request" />
+    <button onclick="search();">Search</button>
+    <iframe id="web" src="" title="Webpage" width="720" height="480">IFrame doesn't work</iframe>
+    <hr /><hr /><hr /><hr /><hr />
+    <iframe width="564" height="317" src="https://www.youtube.com/embed/XtL5Wcj0fgk" title="Lobster"></iframe>
+  </main>
   <hr />
-  <hr />
-  <hr />
-  <hr />
-  <hr />
-  <hr />
-  <iframe width="564" height="317" src="https://www.youtube.com/embed/XtL5Wcj0fgk" title="Lobster"></iframe>
-  <hr />
-  <a href="./index.html">Back to ./index.html</a>
+  <footer>
+    <a href="./index.html">Back to ./index.html</a>
+  </footer>
 </body>
 </html>

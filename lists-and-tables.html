@@ -6,54 +6,90 @@
   <title>Lists and Tables - First Web Project</title>
 </head>
 <body>
-  <h1>HTML Lists and Tables</h1>
-  <h4>Sandwich</h4>
-  <!-- 
-    ul is for unordered (bullet-point) lists in a website.
-    Important attributes include:
-    type, which lets you choose what type of bullet is used
-    for your bullet points.
-
-    NOTE: ul tags should be used for navigation bars on a
-    website.
-  -->
-  <ul>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Back to ./index.html</a></li>
+        <li><a href="./images-and-frames.html">Images and Frames section</a></li>
+        <li><a href="./lists-and-tables.html">Here (./lists-and-tables.html)</a></li>
+        <li><a href="./forms.html">Apply for a j*b</a></li>
+      </ul>
+      <h1>HTML Lists and Tables</h1>
+      <h2>Lists</h2>
+    </nav>
+  </header>
+  <main>
+    <h4>Sandwich</h4>
     <!-- 
-      li tags are used for each list item inside an
-      unordered list or ordered list.
-    -->
-    <li>Meat</li>
-    <li>Cheese</li>
-    <li>Lettuce</li>
-    <li>Tomato</li>
-  </ul>
-  <h4>Fire hydrant directions</h4>
-  <!--
-    The ol tag is for orered lists, which can be numbered (1, 2, 3, ...), lowercase alphabetical
-    (a, b, c), uppercase Roman numeral (I, II, III, etc.), and more.
+      ul is for unordered (bullet-point) lists in a website.
+      Important attributes include:
+      type, which lets you choose what type of bullet is used
+      for your bullet points.
 
-    Important attributes include:
-      type, which explains what type of symbol you are using for the ordering.
-        Possible values include: 1, a, A, i, I.
-  -->
-  <ol>
-    <li>Pull the pin</li>
-    <li>Aim at the base of the fire</li>
-    <li>Squeeze the nozzle</li>
-    <li>Sweep and yell loudly</li>
-    <li>Do a celebratory backflip</li>
-  </ol>
-  <!--
-      NOTE: This a tag has a special code inside it
-      called an entity. This helps us display special
-      characters on a website. E.g., &#201; displays É.
-
-      NOTE: The number codes are universally recognized by
-      browsers. There are also entity names like &Eacute;
-      which would also display É, but not all browsers
-      support these names.
+      NOTE: ul tags should be used for navigation bars on a
+      website.
     -->
+    <ul>
+      <!-- 
+        li tags are used for each list item inside an
+        unordered list or ordered list.
+      -->
+      <li>Meat</li>
+      <li>Cheese</li>
+      <li>Lettuce</li>
+      <li>Tomato</li>
+    </ul>
+    <h4>Fire hydrant directions</h4>
+    <!--
+      The ol tag is for orered lists, which can be numbered (1, 2, 3, ...), lowercase alphabetical
+      (a, b, c), uppercase Roman numeral (I, II, III, etc.), and more.
+
+      Important attributes include:
+        type, which explains what type of symbol you are using for the ordering.
+          Possible values include: 1, a, A, i, I.
+    -->
+    <ol>
+      <li>Pull the pin</li>
+      <li>Aim at the base of the fire</li>
+      <li>Squeeze the nozzle</li>
+      <li>Sweep and yell loudly</li>
+      <li>Do a celebratory backflip</li>
+    </ol>
+    <dl>
+      <dt>Term 1</dt>
+      <dd>Definition 1</dd>
+      <dt>Term 2</dt>
+      <dd>Definition 2</dd>
+      <dt>Term 3</dt>
+      <dd>Definition 3</dd>
+    </dl>
+    <table>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+      </tr>
+      <tr>
+        <td>Item 1-1</td>
+        <td>Item 1-2</td>
+        <td>Item 1-3</td>
+      </tr>
+      <tr>
+        <td>Item 2-1</td>
+        <td>Item 2-2</td>
+        <td>Item 2-3</td>
+      </tr>
+      <tr>
+        <td>Item 3-1</td>
+        <td>Item 3-2</td>
+        <td>Item 3-3</td>
+      </tr>
+      
+    </table>
+  </main>
   <hr />
-  <a href="./index.html">Back to ./index.html</a>
+  <footer>
+    <a href="./index.html">Back to ./index.html</a>
+  </footer>
 </body>
 </html>

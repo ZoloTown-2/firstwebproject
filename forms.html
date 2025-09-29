@@ -6,10 +6,30 @@
   <title>Forms - First Web Project</title>
   <script>
     let anynote;
-    let checked = [false, false, false, false, false, false, false, false, false, false, false, false];
+    let question;
+    let a1;
+    let a2;
+    let a3;
+    let tq1;
+    let tq2;
+    let tq3;
+    let ansElm;
+    let checked = [true, false, true, true, false, false, false, false, false, false, false, false];
+    let ans = 0;
     document.addEventListener('DOMContentLoaded', () => {
       anynote = document.getElementById('anyjobnote');
+      question = document.getElementById('question');
+      a1 = document.getElementById('q1');
+      a2 = document.getElementById('q2');
+      a3 = document.getElementById('q3');
+      tq1 = document.getElementById('tq1');
+      tq2 = document.getElementById('tq2');
+      tq3 = document.getElementById('tq3');
+      ansElm = document.getElementById('answer');
     });
+    function random(cap) {
+      return Math.ceil(Math.random() * cap);
+    }
     function toggleBox(value) {
       value--;
       checked[value] = !checked[value];
@@ -22,6 +42,116 @@
       }
       anynote.hidden = chk;
     }
+    function generateQuestion() {
+      let able = 0;
+      for (var i = 0; i < checked.length; i++) {
+        if (checked[i]) {able++;}
+      }
+      if (able <= 0) {
+        able = checked.length;
+      }
+      let selected = random(able) + 1;
+      tq1.checked = false;
+      tq2.checked = false;
+      tq3.checked = false;
+      ansElm.innerHTML = 'Select an option, then press "Check answer."';
+      switch (selected) {
+        case 1:
+          question.innerHTML = 'Can you use Microsoft Excel?';
+          a1.innerHTML = 'Yes';
+          a2.innerHTML = 'No';
+          a3.innerHTML = 'Just the bare bones';
+          ans = 1;
+          break;
+        case 2:
+          question.innerHTML = 'How do you search something up';
+          a1.innerHTML = 'Computer';
+          a2.innerHTML = 'Browser';
+          a3.innerHTML = 'Kitchen cabinet';
+          ans = 2;
+          break;
+        case 3:
+          question.innerHTML = 'What\'s 8 in 16-bit?';
+          a1.innerHTML = '00001000';
+          a2.innerHTML = '8';
+          a3.innerHTML = 'Zhukdpjo wovavjvwply';
+          ans = 2;
+          break;
+        case 4:
+          question.innerHTML = 'Did I type this pharse right?';
+          a1.innerHTML = 'No, you did\'nt';
+          a2.innerHTML = 'Yes, you did';
+          a3.innerHTML = 'No, you didn\'t';
+          ans = 3;
+          break;
+        case 5:
+          question.innerHTML = 'Is breakdancing permitted?';
+          a1.innerHTML = 'Yes. Only sometimes, however.';
+          a2.innerHTML = 'No, never.';
+          a3.innerHTML = 'Yes, always.';
+          ans = 3;
+          break;
+        case 6:
+          question.innerHTML = 'What should the price of water be?';
+          a1.innerHTML = 'It should be approximately $0.50';
+          a2.innerHTML = 'It should be free';
+          a3.innerHTML = 'I don\'t know, I just work here';
+          ans = 3;
+          break;
+        case 7:
+          question.innerHTML = 'Have you driven large automobiles before?';
+          a1.innerHTML = 'Yes, I\'ve driven a bus before';
+          a2.innerHTML = 'Yes, I\'ve driven a supply vehicle before';
+          a3.innerHTML = 'What kind of question is that?';
+          ans = 2;
+          break;
+        case 8:
+          question.innerHTML = 'Can you yell loud and fast?';
+          a1.innerHTML = 'Yes, I read the prices of auction items';
+          a2.innerHTML = 'No, but I can make actual non-crazy commercials.';
+          a3.innerHTML = 'IS THIS GOOD ENOUGH?!';
+          ans = 3;
+          break;
+        case 9:
+          question.innerHTML = 'When is breakdancing permitted?';
+          a3.innerHTML = 'When I say so';
+          a1.innerHTML = 'When strictly enforced';
+          a2.innerHTML = 'Never';
+          ans = 1;
+          break;
+        case 10:
+          question.innerHTML = 'Can you watch television, drink canned beer, and perch your legs on a table?';
+          a1.innerHTML = 'Yes, proudly';
+          a3.innerHTML = 'Yes, shamefully';
+          a2.innerHTML = 'No, that doesn\'t sound very professional';
+          ans = 1;
+          break;
+        case 11:
+          question.innerHTML = 'Will you remain awake at daytime to fall asleep on duty?';
+          a1.innerHTML = 'Of course';
+          a3.innerHTML = 'No, I\'ll ruin my current sleeping schedule';
+          a2.innerHTML = 'My sleeping schedule is already ruined';
+          ans = 2;
+          break;
+        case 12:
+          question.innerHTML = 'Can you walk around and say things?';
+          a1.innerHTML = 'Yes';
+          a3.innerHTML = 'No';
+          a2.innerHTML = 'Can you move all of your office belongings to floor 2? For me?';
+          ans = 3;
+          break;
+        default:
+          question.innerHTML = 'Error creating question.';
+          a1.innerHTML = 'Okay';
+          a3.innerHTML = 'Got it';
+          a2.innerHTML = 'Understood';
+          ans = 1;
+          break;
+      }
+    }
+    function checkAnswer() {
+      ansElm.innerHTML = 'If your answer was option #' + ans + ', you\'re hired.<br />Press "Generate question" for another question.';
+    }
   </script>
 </head>
 <body>
@@ -30,13 +160,13 @@
   <!--
     The form tag creates an area for user input.
 
-    Neccessary attributes include:
+    Necessary attributes include:
       method, which defines how data that is put into the form
       is handled.
         There are two possible values:
           get, which displays all input at the end of the web address.
           (NOTE: NOT GOOD FOR PRIVATE INFORMATION!!!)
-          post, which handles all input by seding it to a back-end
+          post, which handles all input by sending it to a back-end
           program.
   -->
   <form id="form" method="get">
@@ -63,7 +193,7 @@
       <label for="fname">First name:</label><br />
       <!--
         The input tag creates the actual element that users will
-        type thier information into.
+        type their information into.
 
         Necessary attributes include:
           type, which states what type of input it is
@@ -71,7 +201,7 @@
             id, which gives the input an identifying name different from
             other inputs.
             name, which gives a variable for how to store this information
-            in the serach bar or on the back-end.
+            in the search bar or on the back-end.
 
         Important attributes include:
           required which forces a user to have to enter input in the
@@ -86,7 +216,7 @@
       <input type="email" id="email" name="email" required /><br />
       <label for="loc">Home address:</label><br />
       <input type="text" id="loc" name="loc" required /><br />
-      <label for="com">Preffered communication method:</label>
+      <label for="com">Preferred communication method:</label>
       <!--
 
       -->
@@ -108,13 +238,13 @@
       <legend>Your Role</legend>
       <label for="job">What do you find yourself doing?</label>
       <div id="job">
-        <input onclick="toggleBox(1);" type="checkbox" id="analyst" name="jobBoxes" value="analyst" />
+        <input onclick="toggleBox(1);" type="checkbox" id="analyst" name="jobBoxes" value="analyst" checked />
         <label for="analyst">Analyst</label><br />
         <input onclick="toggleBox(2);" type="checkbox" id="research" name="jobBoxes" value="research" />
         <label for="researcher">Researcher</label><br />
-        <input onclick="toggleBox(3);" type="checkbox" id="compiler" name="jobBoxes" value="compiler" />
+        <input onclick="toggleBox(3);" type="checkbox" id="compiler" name="jobBoxes" value="compiler" checked />
         <label for="compiler">Data compiler</label><br />
-        <input onclick="toggleBox(4);" type="checkbox" id="process" name="jobBoxes" value="process" />
+        <input onclick="toggleBox(4);" type="checkbox" id="process" name="jobBoxes" value="process" checked />
         <label for="process">Data processor</label><br />
         <input onclick="toggleBox(5);" type="checkbox" id="maintenance" name="jobBoxes" value="maintenance" />
         <label for="maintenance">Maintenance</label><br />
@@ -133,9 +263,9 @@
         <input onclick="toggleBox(12);" type="checkbox" id="manager" name="jobBoxes" value="manager" disabled />
         <label for="manager">Manager (full)</label><br />
       </div><br />
-      <fieldset id="anyjobnote">
+      <fieldset id="anyjobnote" hidden>
         <label>In this case, your manager will assign you to a job that they see fit.</label><br />
-        <label>If you wish to request a specfic job, please tick at least one option.</label>
+        <label>If you wish to request a specific job, please tick at least one option.</label>
       </fieldset><br />
       <!--
         The textarea tag creates a larger textbox to
@@ -145,9 +275,29 @@
         id, which gives the input a unique
       -->
       <label for="why">Why should we hire you? What can you provide us with?</label><br />
-      <textarea id="why"></textarea>
-      <!--Add a file selector here-->
+      <textarea id="why"></textarea><br />
+      <label for="app">Please lend us your application(s) here: </label>
+      <input id="app" type="file" multiple required />
     </fieldset>
+    <input type="submit" value="Submit request" /><br /><br /><br />
+    <input type="reset" value="Reset request" /><br /><br />
   </form>
+  <fieldset>
+      <legend>Bonus Question</legend>
+      <button onclick="generateQuestion();">Generate Question</button><br /><br />
+      <p>(Click the selection boxes above for more questions!)</p><br />
+      <label id="question"></label><br /><br />
+      <input type="radio" id="tq1" name="tq" value="1" />
+      <label id="q1" for="tq1"></label><br />
+      <input type="radio" id="tq2" name="tq" value="2" />
+      <label id="q2" for="tq2"></label><br />
+      <input type="radio" id="tq3" name="tq" value="3" />
+      <label id="q3" for="tq3"></label><br />
+      <br />
+      <button onclick="checkAnswer();">Check answer</button><br />
+      <label id="answer"></label>
+    </fieldset>
+    <br /><br /><br />
+    <a href="./index.html">Back to ./index.html</a>
 </body>
 </html>
