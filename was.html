@@ -63,7 +63,6 @@
       }
       accVal /= accuracy.length;
       accVal = Math.round(accVal * 100) / 100;
-      console.log(accVal);
       accField.innerHTML = 'Accuracy: ' + accVal + '%';
       wasHit = false;
     }
@@ -79,7 +78,6 @@
       }
       accVal /= accuracy.length;
       accVal = Math.round(accVal * 100) / 100;
-      console.log(accVal);
       // The line above gives the accVal variable a limit of two decimals.
       accField.innerHTML = 'Accuracy: ' + accVal + '%';
       target.style.left = random(250) + 'px';
