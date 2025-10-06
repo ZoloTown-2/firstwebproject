@@ -24,19 +24,8 @@
   -->
   <title>First Web Project</title>
   <script>
-    let painline = -1;
-    let painlines = ['Ouch! What was that for?', 'There was no need to do that a second time.', 'Okay, don\'t you have anything better to do?', 'This is very painful!', 'Nevermind, I\'ve adapted.', 'How is your life?', 'Mine is not remotely eventful.', 'I was lying about the adaption thing. Please stop.', 'Click the hyperlink above to call someone who would prefer being poked.', 'I\'m filing a restraining order on you.', 'And, I will start doing that by leaving.', 'Thank you for making my life more difficult.'];
     function ran(min, max) {
       return (Math.ceil(Math.random() * (max - min))) + min;
-    }
-    function nextPainLine() {
-      painline++;
-      if (painline >= painlines.length) {
-        document.getElementById('sentient').remove();
-        return;
-      } else {
-        return painlines[painline];
-      }
     }
     document.addEventListener('DOMContentLoaded', () => {
       let call = document.getElementById('call-random');
@@ -132,7 +121,7 @@
     <p><sub>Subscript text</sub></p>
     <p><mark>Hightlighted text</mark></p>
     <p><mark style="background-color: lightgreen;">Green highlighted text</mark></p>
-    <p><span id="sentient" onclick="document.getElementById('sentient').innerHTML = nextPainLine();" onmouseenter="document.getElementById('sentient').innerHTML = 'Please don\'t.';" onmouseleave="document.getElementById('sentient').innerHTML = 'Sentient text';">Sentient text</span></p>
+    <p><span id="sentient" onclick="document.getElementById('sentient').innerHTML = 'Ouch! Please don\'t do that!';" onmouseleave="document.getElementById('sentient').innerHTML = 'Sentient text';">Sentient text</span></p>
     <br />
     <p>Cylinder surface area: 2&pi;r<sup>2</sup> + 2&pi;rh</p>
     <p>(Thanks to Mr. Suggitt)</p>
