@@ -1,4 +1,11 @@
 <!--
+  Name: Xander Thomson
+  Course: Web Development 10S
+  Teacher: Mr. Hardman
+  School Pembina Trails Collegiate (PTC)
+  Date Last Modified: 10/07/25 (DD/MM/YY)
+-->
+<!--
   This DOCTYPE tag explains to the browser that this
   is an HTML document.
 -->
@@ -31,7 +38,7 @@
       let call = document.getElementById('call-random');
       let chosen = ran(1000000000, 9999999999);
       call.href = 'tel:' + chosen;
-      document.getElementById('chosen').innerHTML = 'Unfortunate victim chosen: ' + chosen;
+      document.getElementById('chosen').innerHTML = '<u>Unfortunate victim chosen: ' + chosen + '</u>';
     });
   </script>
 </head>
@@ -56,6 +63,10 @@
       full sentences of information on a web page.
     -->
     <p>Hello, my name is Xander. This is my first website.</p>
+    <p>I'm not quite sure what I'm aiming to do in this website, I just like to program things for fun, and finding this school has already made things much better for me.</p>
+    <p>You can click around the website, you may find something you like.</p>
+    <p>Above are your main navigation methods, I suggest you click up there when you're finished with a page.</p>
+    <p>I personally haven't worked with HTML in a little while, so this is pretty fun getting to know it again. It is a great way (if not one of the only ways) to make a website by hand, and is a great talent to have in today's computerized world.</p>
     <hr />
     <!-- 
       h1 is the largest type of heading and is the main 
@@ -91,7 +102,7 @@
           This will open the default telephone client on the device. 
         -->
         <a id="call-random">Call a random person (refresh to reset)</a><br />
-        <label id="chosen">Victim has not been chosen yet.</label><br />
+        <label id="chosen"><u>Victim has not been chosen yet.</u></label><br />
     </section>
     <br />
     <!-- 
@@ -112,6 +123,10 @@
         link should be opened. E.g., _blank opens the link in a
         new tab.
     -->
+    <figure>
+      <img src="https://www.udacity.com/blog/wp-content/uploads/2020/06/HTML_Blog-scaled.jpeg" width="480" />
+      <figcaption>Fig. 1-1: I was told to put stock photos in this page. I'm not very impressed about this image either</figcaption>
+    </figure>
     <p><b>Bold text</b></p>
     <p><i>Italic text</i></p>
     <p><u>Underlined text</u></p>
@@ -125,7 +140,7 @@
     <br />
     <p>Cylinder surface area: 2&pi;r<sup>2</sup> + 2&pi;rh</p>
     <p>(Thanks to Mr. Suggitt)</p>
-    <p>&lt;element option="value"&gt;Inner HTML&lt;/element&gt;</p>
+    <p>&lt;element attribute="value"&gt;Inner HTML&lt;/element&gt;</p>
   </main>
   <hr />
   <footer>
